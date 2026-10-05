@@ -122,4 +122,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView"
         app:layout_constraintVertical_bias="0.426" />
+
+    <Button
+        android:id="@+id/btnLima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="Pertemuan5"
+        android:backgroundTint="#D33BB7EF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnKembali" />
 </androidx.constraintlayout.widget.ConstraintLayout>
