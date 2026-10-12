@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Syafika_3TIB">
         <activity
-            android:name=".LoginActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -32,6 +33,14 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".pertemuan5.WebViewActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".pertemuan6.SixthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
