@@ -1,0 +1,93 @@
+package com.example.syafika_3tib.Home
+
+import android.content.Context.MODE_PRIVATE
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import com.example.syafika_3tib.Home.pertemuan5.LimaActivity
+import com.example.syafika_3tib.Home.pertemuan6.SixthActivity
+import com.example.syafika_3tib.LoginActivity
+import com.example.syafika_3tib.R
+import com.example.syafika_3tib.databinding.FragmentHomeBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
+
+class HomeFragment : Fragment() {
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
+        val user = requireActivity().intent.getStringExtra("Username")
+        val pass = requireActivity().intent.getStringExtra("Password")
+        val umur = requireActivity().intent.getIntExtra("Umur",0)
+
+
+        Log.d("Hasil","Umur $umur")
+        binding.txtUsername.text = user
+        binding.txtPassword.setText(pass)
+
+        binding.btnSnackBar.setOnClickListener {
+            Snackbar.make(binding.root, "Item dihapus",
+                Snackbar.LENGTH_LONG)
+                .setAction("BATAL") {
+                    val intent = Intent( requireContext(), LoginActivity::class.java)
+                    startActivity(intent)
+                }
+                .show()
+        }
+        binding.btnAlert.setOnClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Hapus data")
+                .setMessage("Data yang dihapus tidak " +
+                        "bisa dikembalikan.")
+                .setNegativeButton("Batal", null)
+                .setPositiveButton("Hapus") { dialog, _ ->
+
+                }
+                .setCancelable(false)
+                .show()
+
+
+        }
+        binding.btnKembali.setOnClickListener {
+//            val intent = Intent( this, LoginActivity::class.java)
+//            startActivity(intent)
+            requireActivity().finish()
+        }
+        binding.btnLima.setOnClickListener {
+            startActivity(Intent( requireContext(), LimaActivity::class.java))
+        }
+        binding.btnToSix.setOnClickListener {
+            startActivity(Intent( requireContext(), SixthActivity::class.java))
+        }
+        binding.btnLogout.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Logout")
+                .setMessage("Apakah Anda yakin ingin keluar?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+                    dialog.dismiss()
+                    startActivity(Intent(requireContext(), LoginActivity::class.java))
+                    requireActivity().finish()
+                }
+                .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
+                .show()
+        }
+    }
+}

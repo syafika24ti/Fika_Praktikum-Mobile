@@ -1,7 +1,6 @@
 package com.example.syafika_3tib
 
 import android.content.Intent
-import android.icu.lang.UCharacter
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -9,10 +8,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.syafika_3tib.databinding.ActivityLoginBinding
 import com.example.syafika_3tib.databinding.ActivityMainBinding
-import com.example.syafika_3tib.pertemuan5.LimaActivity
-import com.example.syafika_3tib.pertemuan6.SixthActivity
+import com.example.syafika_3tib.Home.pertemuan5.LimaActivity
+import com.example.syafika_3tib.Home.pertemuan6.SixthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 

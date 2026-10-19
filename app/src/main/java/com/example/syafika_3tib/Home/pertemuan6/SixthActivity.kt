@@ -1,7 +1,5 @@
-package com.example.syafika_3tib.pertemuan6
+package com.example.syafika_3tib.Home.pertemuan6
 
-import android.content.Intent
-import android.os.Binder
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -10,9 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.syafika_3tib.R
-import com.example.syafika_3tib.databinding.ActivityLoginBinding
 import com.example.syafika_3tib.databinding.ActivitySixthBinding
-import com.example.syafika_3tib.pertemuan5.LimaActivity
 
 class SixthActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySixthBinding
