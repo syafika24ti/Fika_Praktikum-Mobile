@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import com.example.syafika_3tib.Home.pertemuan5.LimaActivity
 import com.example.syafika_3tib.Home.pertemuan6.SixthActivity
+import com.example.syafika_3tib.Home.pertemuan9.NinthActivity
 import com.example.syafika_3tib.LoginActivity
 import com.example.syafika_3tib.R
 import com.example.syafika_3tib.databinding.FragmentHomeBinding
@@ -88,6 +89,9 @@ class HomeFragment : Fragment() {
                 }
                 .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
                 .show()
+        }
+        binding.btnToNinth.setOnClickListener {
+            startActivity(Intent(requireContext(), NinthActivity::class.java))
         }
     }
 }
